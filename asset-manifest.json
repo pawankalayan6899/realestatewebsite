@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/realestatewebsite/static/css/main.0dfd8def.css",
-    "main.js": "/realestatewebsite/static/js/main.113b8380.js",
+    "main.css": "/realestatewebsite/static/css/main.5034cf02.css",
+    "main.js": "/realestatewebsite/static/js/main.485e0b76.js",
     "static/js/409.176b4faf.chunk.js": "/realestatewebsite/static/js/409.176b4faf.chunk.js",
     "static/js/978.ed97c026.chunk.js": "/realestatewebsite/static/js/978.ed97c026.chunk.js",
     "static/js/891.b9b5ebaf.chunk.js": "/realestatewebsite/static/js/891.b9b5ebaf.chunk.js",
@@ -43,12 +43,12 @@
     "static/media/Real-Estate-Investment-Opportunities.webp": "/realestatewebsite/static/media/Real-Estate-Investment-Opportunities.42cf4850f0d7c822d681.webp",
     "static/media/logo.png": "/realestatewebsite/static/media/logo.367199b5f795833bf169.png",
     "index.html": "/realestatewebsite/index.html",
-    "main.0dfd8def.css.map": "/realestatewebsite/static/css/main.0dfd8def.css.map",
-    "main.113b8380.js.map": "/realestatewebsite/static/js/main.113b8380.js.map",
+    "main.5034cf02.css.map": "/realestatewebsite/static/css/main.5034cf02.css.map",
+    "main.485e0b76.js.map": "/realestatewebsite/static/js/main.485e0b76.js.map",
     "453.5bb0d225.chunk.js.map": "/realestatewebsite/static/js/453.5bb0d225.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0dfd8def.css",
-    "static/js/main.113b8380.js"
+    "static/css/main.5034cf02.css",
+    "static/js/main.485e0b76.js"
   ]
 }
