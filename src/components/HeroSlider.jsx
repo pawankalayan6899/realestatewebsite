@@ -59,7 +59,7 @@ const HeroSlider = React.memo(() => {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [loadedImages, setLoadedImages] = useState({});
   const [isTransitioning, setIsTransitioning] = useState(false);
-  const slideTimerRef = useRef(null);
+  
   const backgroundRef = useRef(null);
 
   // Preload images for better performance

@@ -1,7 +1,6 @@
 import React, { 
   useRef, 
-  useState, 
-  useEffect, 
+
   useMemo 
 } from 'react';
 import { 
@@ -13,7 +12,7 @@ import {
   LayoutGroup 
 } from 'framer-motion';
 import styles from './Blog.module.css';
-import { FaArrowRight, FaSpinner } from 'react-icons/fa';
+
 
 // Direct image imports
 import image1 from '../assets/images/3bhk.jpg';
@@ -228,7 +227,7 @@ const BlogPost = React.memo(({ title, excerpt, image, index }) => {
           whileTap={{ scale: 0.95 }}
           transition={{ duration: 0.2 }}
         >
-          Read More <FaArrowRight style={{ marginLeft: '0.5rem' }} />
+          
         </motion.a>
       </motion.div>
     </motion.div>
