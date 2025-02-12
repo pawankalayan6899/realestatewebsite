@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkthanvi_buildtech=self.webpackChunkthanvi_buildtech||[]).push([[926],{926:(a,e,t)=>{a.exports=t.p+"static/media/home.6.cad9a2a56d00a5081248.png"}}]);

@@ -1,0 +1,21 @@
+# Robots.txt for Thanvi BuildTech
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Sitemap: https://thanvibuildtech.com/sitemap.xml
+
+# Crawl-delay parameter: number of seconds to wait between successive requests
+Crawl-delay: 10
+
+# Specific bot rules
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
+Allow: /
