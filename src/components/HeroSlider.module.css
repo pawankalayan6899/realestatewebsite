@@ -1,0 +1,559 @@
+.heroSlider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  perspective: 1px;
+}
+
+.backgroundContainer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+}
+
+.backgroundSlide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 1s ease, transform 3s linear;
+  will-change: opacity, transform;
+  z-index: 1;
+}
+
+.backgroundSlide.active {
+  opacity: 1;
+  animation: kenBurns 12s ease-in-out infinite alternate;
+}
+
+@keyframes kenBurns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom, 
+    rgba(0, 0, 0, 0.6) 0%, 
+    rgba(0, 0, 0, 0.3) 50%, 
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+  z-index: 10;
+  width: 80%;
+  max-width: 800px;
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  text-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+.subtitle {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+  max-width: 600px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cta {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #ff6b00;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  will-change: transform;
+}
+
+.cta:hover {
+  background-color: #ff8533;
+  transform: scale(1.05);
+}
+
+.ctaArrow {
+  margin-left: 8px;
+}
+
+.dots {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 20;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.activeDot {
+  background-color: white;
+  width: 14px;
+  height: 14px;
+}
+
+.slidesContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  will-change: transform, opacity;
+}
+
+.slide.active {
+  opacity: 1;
+  animation: kenBurns 12s ease-in-out infinite alternate;
+}
+
+.slide.transitioning {
+  opacity: 0;
+  transform: scale(1.1);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  z-index: 0;
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 2rem;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(5px);
+  z-index: 3;
+  opacity: 0;
+}
+
+.heroSlider:hover .navButton {
+  opacity: 1;
+  transform: translateY(-50%) scale(1);
+}
+
+.prevButton {
+  left: 20px;
+}
+
+.nextButton {
+  right: 20px;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.navigation {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  z-index: 3;
+}
+
+.dotsContainer {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: 2px solid transparent;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.dot::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform: scale(0);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 50%;
+}
+
+.dot:hover {
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(1.2);
+}
+
+.activeDot {
+  background: transparent;
+  transform: scale(1.2);
+  border-color: white;
+}
+
+.activeDot::before {
+  transform: scale(0.6);
+}
+
+.progressBar {
+  width: 100px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  transform: translateZ(0);
+}
+
+.progressInner {
+  width: 100%;
+  height: 100%;
+  background: white;
+  transform-origin: left;
+  animation: progress 5s linear infinite;
+  will-change: transform;
+}
+
+.progressInner.paused {
+  animation-play-state: paused;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) {
+  .navButton {
+    opacity: 1;
+    transform: translateY(-50%) scale(1);
+    background: rgba(255, 255, 255, 0.2);
+  }
+}
+
+@media (max-width: 1200px) {
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .subtitle {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 1.1rem;
+  }
+
+  .cta {
+    padding: 0.8rem 2rem;
+    font-size: 1rem;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+
+  .navButton {
+    width: 35px;
+    height: 35px;
+    font-size: 1.2rem;
+  }
+
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+}
+
+/* Mobile and Small Screen Responsive Styles */
+@media (max-width: 768px) {
+  .heroSlider {
+    height: 100vh;
+    min-height: 600px; /* Ensure minimum height for shorter devices */
+    position: relative;
+    overflow: hidden;
+  }
+
+  .backgroundContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .backgroundSlide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease, transform 3s linear;
+    will-change: opacity, transform;
+    z-index: 1;
+  }
+
+  .backgroundSlide.active {
+    opacity: 1;
+    animation: kenBurnsResponsive 3s ease-in-out infinite alternate;
+  }
+
+  @keyframes kenBurnsResponsive {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.1); /* Reduced scale for mobile to prevent cropping */
+    }
+  }
+
+  .content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+    width: 90%; /* Increased width for better mobile readability */
+    max-width: 600px;
+    padding: 0 15px;
+  }
+
+  .title {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.4);
+  }
+
+  .subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .description {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    max-width: 100%;
+    text-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    border-radius: 5px;
+  }
+
+  .dots {
+    bottom: 15px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+  .dot.activeDot {
+    width: 12px;
+    height: 12px;
+  }
+}
+
+/* iPhone X/XS, iPhone 11 Pro, iPhone 12/13 Pro */
+@media only screen 
+  and (device-width: 375px) 
+  and (device-height: 812px),
+  (device-width: 390px) 
+  and (device-height: 844px),
+  (device-width: 360px) 
+  and (device-height: 780px) {
+  .backgroundSlide {
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .content {
+    width: 95%;
+    padding: 0 10px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}
+
+/* Landscape Mode Adjustments */
+@media screen and (max-width: 768px) and (orientation: landscape) {
+  .heroSlider {
+    min-height: 500px;
+  }
+
+  .content {
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+
+  .description {
+    font-size: 0.9rem;
+  }
+}

@@ -1,0 +1,16 @@
+/* src/pages/AboutUs.css */
+.about-text, .value, .team-member {
+    transition: transform 0.3s ease;
+  }
+  
+  .about-text:hover, .value:hover, .team-member:hover {
+    transform: translateY(-10px);
+  }
+  
+  .about-image img {
+    transition: transform 0.3s ease;
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.05);
+  }

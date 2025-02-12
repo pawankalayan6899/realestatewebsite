@@ -1,0 +1,271 @@
+.home {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Add smooth scroll behavior */
+.home {
+  scroll-behavior: smooth;
+}
+
+/* Ensure content flows properly below the hero slider */
+.home > *:not(:first-child) {
+  position: relative;
+  z-index: 1;
+  background: white;
+  margin-top: 0;
+}
+
+.section {
+  padding: 5rem 0;
+}
+
+.sectionLight {
+  background-color: #f8f9fa;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.aboutContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.aboutText {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #6c757d;
+}
+
+.aboutGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.aboutImages {
+  position: relative;
+  height: 600px;
+}
+
+.imageWrapper {
+  position: absolute;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.imageWrapper:first-child {
+  width: 60%;
+  height: 400px;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+.imageWrapper:last-child {
+  width: 50%;
+  height: 300px;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.aboutImage1,
+.aboutImage2 {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.imageWrapper:hover img {
+  transform: scale(1.05);
+}
+
+.aboutText {
+  padding: 2rem 0;
+}
+
+.aboutText h3 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-bottom: 1rem;
+}
+
+.aboutText h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 80px;
+  height: 3px;
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  border-radius: 3px;
+}
+
+.aboutText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.aboutFeatures {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.featureItem {
+  text-align: left;
+}
+
+.featureNumber {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0d6efd;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.featureText {
+  font-size: 1rem;
+  color: #6c757d;
+  font-weight: 500;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 1rem;
+}
+
+.serviceCard {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.serviceCard h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.serviceCard h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 3px;
+  background: linear-gradient(45deg, #0d6efd, #0dcaf0);
+  border-radius: 3px;
+}
+
+.serviceCard p {
+  color: #6c757d;
+  line-height: 1.6;
+}
+
+@media (max-width: 1200px) {
+  .aboutGrid {
+    gap: 2rem;
+  }
+
+  .aboutImages {
+    height: 500px;
+  }
+}
+
+@media (max-width: 992px) {
+  .aboutGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .aboutImages {
+    height: 400px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .aboutText {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .aboutText h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .aboutFeatures {
+    justify-content: center;
+  }
+
+  .featureItem {
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutFeatures {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .aboutImages {
+    height: 350px;
+  }
+
+  .imageWrapper:first-child {
+    height: 300px;
+  }
+
+  .imageWrapper:last-child {
+    height: 250px;
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .servicesGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutText {
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+}
