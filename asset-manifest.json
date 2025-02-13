@@ -1,13 +1,7 @@
 {
   "files": {
-    "main.css": "/realestatewebsite/static/css/main.5034cf02.css",
-    "main.js": "/realestatewebsite/static/js/main.485e0b76.js",
-    "static/js/409.176b4faf.chunk.js": "/realestatewebsite/static/js/409.176b4faf.chunk.js",
-    "static/js/978.ed97c026.chunk.js": "/realestatewebsite/static/js/978.ed97c026.chunk.js",
-    "static/js/891.b9b5ebaf.chunk.js": "/realestatewebsite/static/js/891.b9b5ebaf.chunk.js",
-    "static/js/492.58b2dde8.chunk.js": "/realestatewebsite/static/js/492.58b2dde8.chunk.js",
-    "static/js/405.2703af45.chunk.js": "/realestatewebsite/static/js/405.2703af45.chunk.js",
-    "static/js/926.acaa899b.chunk.js": "/realestatewebsite/static/js/926.acaa899b.chunk.js",
+    "main.css": "/realestatewebsite/static/css/main.f7d27cf4.css",
+    "main.js": "/realestatewebsite/static/js/main.b5edf9df.js",
     "static/js/453.5bb0d225.chunk.js": "/realestatewebsite/static/js/453.5bb0d225.chunk.js",
     "static/media/about-2.jpg": "/realestatewebsite/static/media/about-2.23c68f5e768420c19338.jpg",
     "static/media/about-us.png": "/realestatewebsite/static/media/about-us.99a37d40f9a333122734.png",
@@ -43,12 +37,12 @@
     "static/media/Real-Estate-Investment-Opportunities.webp": "/realestatewebsite/static/media/Real-Estate-Investment-Opportunities.42cf4850f0d7c822d681.webp",
     "static/media/logo.png": "/realestatewebsite/static/media/logo.367199b5f795833bf169.png",
     "index.html": "/realestatewebsite/index.html",
-    "main.5034cf02.css.map": "/realestatewebsite/static/css/main.5034cf02.css.map",
-    "main.485e0b76.js.map": "/realestatewebsite/static/js/main.485e0b76.js.map",
+    "main.f7d27cf4.css.map": "/realestatewebsite/static/css/main.f7d27cf4.css.map",
+    "main.b5edf9df.js.map": "/realestatewebsite/static/js/main.b5edf9df.js.map",
     "453.5bb0d225.chunk.js.map": "/realestatewebsite/static/js/453.5bb0d225.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.5034cf02.css",
-    "static/js/main.485e0b76.js"
+    "static/css/main.f7d27cf4.css",
+    "static/js/main.b5edf9df.js"
   ]
 }
