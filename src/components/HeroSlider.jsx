@@ -3,10 +3,17 @@ import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import styles from './HeroSlider.module.css';
 
-// Optimize image imports with lazy loading
+// Direct image imports instead of dynamic imports
+import homeImage1 from '../assets/images/home.1.png';
+import homeImage2 from '../assets/images/home.2.png';
+import homeImage3 from '../assets/images/home.3.png';
+import homeImage4 from '../assets/images/home.4.png';
+import homeImage5 from '../assets/images/home.5.png';
+import homeImage6 from '../assets/images/home.6.png';
+
 const slides = [
   {
-    image: () => import('../assets/images/home.1.png'),
+    image: homeImage1,
     title: "Building Dreams",
     subtitle: "Creating Lasting Impressions",
     description: "Experience luxury living with our premium residential projects",
@@ -14,7 +21,7 @@ const slides = [
     ctaLink: "/projects"
   },
   {
-    image: () => import('../assets/images/home.2.png'),
+    image: homeImage2,
     title: "Quality Construction",
     subtitle: "Excellence in Every Detail",
     description: "Setting new standards in construction with innovative technology",
@@ -22,7 +29,7 @@ const slides = [
     ctaLink: "/about"
   },
   {
-    image: () => import('../assets/images/home.3.png'),
+    image: homeImage3,
     title: "Modern Design",
     subtitle: "Contemporary Living Spaces",
     description: "Thoughtfully designed spaces that blend aesthetics with functionality",
@@ -30,7 +37,7 @@ const slides = [
     ctaLink: "/gallery"
   },
   {
-    image: () => import('../assets/images/home.4.png'),
+    image: homeImage4,
     title: "Luxury Living",
     subtitle: "Experience the Difference",
     description: "Premium amenities and world-class facilities in every project",
@@ -38,7 +45,7 @@ const slides = [
     ctaLink: "/projects"
   },
   {
-    image: () => import('../assets/images/home.5.png'),
+    image: homeImage5,
     title: "Premium Projects",
     subtitle: "Setting New Standards",
     description: "Redefining luxury with attention to every detail",
@@ -46,10 +53,10 @@ const slides = [
     ctaLink: "/gallery"
   },
   {
-    image: () => import('../assets/images/home.6.png'),
+    image: homeImage6,
     title: "Your Future Home",
     subtitle: "Where Dreams Come True",
-    description: "Find your perfect home in our exclusive residential projects",
+    description: "Crafting homes that reflect your aspirations and lifestyle",
     ctaText: "Contact Us",
     ctaLink: "/contact"
   }
@@ -64,20 +71,15 @@ const HeroSlider = React.memo(() => {
 
   // Preload images for better performance
   useEffect(() => {
-    const imagePromises = slides.map((slide, index) => 
-      slide.image().then(imageModule => ({
-        index,
-        src: imageModule.default
-      }))
-    );
-
-    Promise.all(imagePromises).then(loadedImageData => {
-      const imageMap = loadedImageData.reduce((acc, { index, src }) => {
-        acc[index] = src;
+    try {
+      const imageMap = slides.reduce((acc, { image }, index) => {
+        acc[index] = image;
         return acc;
       }, {});
       setLoadedImages(imageMap);
-    });
+    } catch (error) {
+      console.error('Error loading images:', error);
+    }
   }, []);
 
   // Slide transition logic

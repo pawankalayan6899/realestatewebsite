@@ -11,7 +11,7 @@ import About from './pages/About';
 import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
-import Footer from './components/Footer';
+import Footer from './components/Footer/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Toast from './components/Toast';
 
